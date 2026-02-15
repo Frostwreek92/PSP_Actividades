@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente Web Agenda</title>
+</head>
+<body>
+<h1>Cliente Web: Insertar Contacto</h1>
+<div style="border: 1px solid #ccc; padding: 20px; width: 350px;">
+    <h3>Nuevo Contacto (POST)</h3>
+    <p>Introduce los datos. Se enviarán como texto plano.</p>
+    <iframe name="destinoOculto" style="display:none;"></iframe>
+    <form action="http://localhost:8000/agenda"
+          method="POST"
+          enctype="text/plain"
+          target="destinoOculto"
+          onsubmit="alert('Datos enviados (La respuesta del servidor se ha cargado en segundo plano)')">
+        <label for="nombre">Nombre (ID):</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Pepe"><br><br>
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" id="telefono" name="telefono" placeholder="Ej: 666111222"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" placeholder="Ej: correo@test.com"><br><br>
+        <input type="submit" value="Enviar Datos al Servidor">
+    </form>
+</div>
+<br>
+<a href="http://localhost:8000/agenda" target="_blank">Ver agenda actual (Lanza petición GET)</a>
+</body>
+</html>
