@@ -5,10 +5,10 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Cliente {
+public class ClienteTCP {
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket("10.204.77.186", 12345);
+            Socket socket = new Socket("localhost", 12345);
             OutputStream outputStream = socket.getOutputStream();
             PrintWriter out = new PrintWriter(outputStream,
                     true);
